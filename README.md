@@ -2,14 +2,14 @@
 
 ## Description
 
-This is a service used to process and store media content in the most optimized way possible so that it can be streamed to the Hangout app users effectively. Currently it contains the pipeline for video procesing and the implementation of image processing pipeline is underway.
-
-In the final version this service will be able to process any image or video content effectively to optimize them for storage and streaming.
+This is a service transcodes user uploaded videos in to multiple resolutions and bitrates and stores it into provided s3 buckets to be streamed over MPEG-Dash. Given the interface and the harness along side exisiting transcoding pipelines you can very easily plug and play more transcoding pipelines based on different codecs and get up and running. The service integrates with `Kafka` for upload event notifications,`Postgresql` for fetching and updating records related to the videos, processing and `Amazon S3` for content upload and downlod
 
 ## Pre-requisites
 
+- FFMPEG to be installed locally in the machine/container in which this service would run
 - kafka Broker url and a topic to connect to
-- FFMPEG to be installed locally in the machine/node in which this service would run
+- Postgresql database to connect to
+- 2 Separate Amazon s3 buckets or atlest 2 separate paths in a single s3 bucket to download raw videos and upload transcoded files (mpd and m4s files)
 
 
 ## Architecture overview
