@@ -1,4 +1,4 @@
-# Hangout Storage Service
+# Mamoth
 
 ## Description
 
