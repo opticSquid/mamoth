@@ -2,7 +2,13 @@
 
 ## Description
 
-This is a service transcodes user uploaded videos in to multiple resolutions and bitrates and stores it into provided s3 buckets to be streamed over MPEG-Dash. Given the interface and the harness along side exisiting transcoding pipelines you can very easily plug and play more transcoding pipelines based on different codecs and get up and running. The service integrates with `Kafka` for upload event notifications,`Postgresql` for fetching and updating records related to the videos, processing and `Amazon S3` for content upload and downlod
+This is a service transcodes user uploaded videos in to multiple resolutions and bitrates and stores it into provided s3 buckets to be streamed over MPEG-Dash.
+
+## Features
+
+- Given the interface and the harness along side exisiting transcoding pipelines you can very easily plug and play more transcoding pipelines based on different codecs and get up and running.
+- The service integrates with `Kafka` for upload event notifications,`Postgresql` for fetching and updating records related to the videos, processing and `Amazon S3` for content upload and downlod.
+- You can run multiple instances of this app or increase the number of workers in a single instance of the app or do both at the same time depending on the load and the videos will be processed properly no double processing or missed processing will cccour.
 
 ## Pre-requisites
 
